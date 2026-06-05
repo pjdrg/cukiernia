@@ -25,11 +25,52 @@ const b = import.meta.env.BASE_URL; // '/slodko' in prod, '/' in dev
       <li><a href={`${b}/torty`} class:list={['nav-link', { active: page === 'torty' }]}>Konfigurator tortów</a></li>
       <li><a href={`${b}/kontakt`} class:list={['nav-link', { active: page === 'kontakt' }]}>Kontakt</a></li>
     </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <div class="nav-overlay-header">
+      <a href={`${b}/`} class="nav-overlay-logo">Słodko</a>
+      <button class="nav-overlay-close" id="navClose" aria-label="Zamknij menu">✕</button>
+    </div>
+    <div class="nav-overlay-links">
+      <a href={`${b}/`} class:list={['nav-overlay-link', { active: page === 'home' }]}>Strona główna</a>
+      <a href={`${b}/menu`} class:list={['nav-overlay-link', { active: page === 'menu' }]}>Menu</a>
+      <a href={`${b}/torty`} class:list={['nav-overlay-link', { active: page === 'torty' }]}>Konfigurator tortów</a>
+      <a href={`${b}/kontakt`} class:list={['nav-overlay-link', { active: page === 'kontakt' }]}>Kontakt</a>
+    </div>
+  </div>
 
   <main>
     <slot />
   </main>
+
+  <script>
+    const burger = document.getElementById('navBurger') as HTMLButtonElement;
+    const overlay = document.getElementById('navOverlay') as HTMLDivElement;
+    const closeBtn = document.getElementById('navClose') as HTMLButtonElement;
+
+    function openMenu() {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.querySelectorAll('.nav-overlay-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 
   <footer class="footer">
     <div class="footer-logo">Słodko</div>
