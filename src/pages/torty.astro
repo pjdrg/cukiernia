@@ -686,7 +686,7 @@ function refresh() {
   const btn = document.getElementById('orderBtn') as HTMLAnchorElement | null;
   if (btn) {
     const params = new URLSearchParams({ tort: JSON.stringify(config) });
-    btn.href = `/kontakt?${params}`;
+    btn.href = `${import.meta.env.BASE_URL}kontakt?${params}`;
   }
 }
 
