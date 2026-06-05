@@ -4,7 +4,7 @@ interface Props {
   page: string;
 }
 const { title, page } = Astro.props;
-const b = import.meta.env.BASE_URL;
+const b = import.meta.env.BASE_URL; // '/slodko' in prod, '/' in dev
 ---
 <!DOCTYPE html>
 <html lang="pl">
@@ -18,12 +18,12 @@ const b = import.meta.env.BASE_URL;
 </head>
 <body>
   <nav class="nav">
-    <a href={b} class="nav-logo">Słodko</a>
+    <a href={`${b}/`} class="nav-logo">Słodko</a>
     <ul class="nav-links">
-      <li><a href={b} class:list={['nav-link', { active: page === 'home' }]}>Strona główna</a></li>
-      <li><a href={`${b}menu`} class:list={['nav-link', { active: page === 'menu' }]}>Menu</a></li>
-      <li><a href={`${b}torty`} class:list={['nav-link', { active: page === 'torty' }]}>Konfigurator tortów</a></li>
-      <li><a href={`${b}kontakt`} class:list={['nav-link', { active: page === 'kontakt' }]}>Kontakt</a></li>
+      <li><a href={`${b}/`} class:list={['nav-link', { active: page === 'home' }]}>Strona główna</a></li>
+      <li><a href={`${b}/menu`} class:list={['nav-link', { active: page === 'menu' }]}>Menu</a></li>
+      <li><a href={`${b}/torty`} class:list={['nav-link', { active: page === 'torty' }]}>Konfigurator tortów</a></li>
+      <li><a href={`${b}/kontakt`} class:list={['nav-link', { active: page === 'kontakt' }]}>Kontakt</a></li>
     </ul>
   </nav>
 
