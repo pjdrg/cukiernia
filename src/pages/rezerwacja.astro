@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Rezerwacja" page="rezerwacja">
+
+  <section class="rezerwacja">
+    <div class="rezerwacja-inner">
+
+      <div class="rez-info">
+        <h2 class="rez-title">Zarezerwuj stolik</h2>
+        <p class="rez-text">Nie możemy się doczekać Twojej wizyty. Wpadnij na kawę i domowe wypieki w naszej kawiarni.</p>
+        <p class="rez-text">Walk-iny mile widziane, ale w weekendy i przy większych grupach rezerwacja jest wskazana.</p>
+        <svg class="rez-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Steam -->
+          <path d="M80 58 C77 46 82 35 79 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+          <path d="M100 53 C97 41 102 30 99 18" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+          <path d="M120 58 C117 46 122 35 119 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+          <!-- Cup body -->
+          <path d="M55 75 L68 160 Q100 176 132 160 L145 75 Z"
+                stroke="white" stroke-width="3" fill="rgba(255,255,255,0.1)" stroke-linejoin="round"/>
+          <!-- Cup rim -->
+          <ellipse cx="100" cy="75" rx="45" ry="10" stroke="white" stroke-width="3" fill="rgba(255,255,255,0.08)"/>
+          <!-- Handle -->
+          <path d="M145 96 C170 96 174 128 145 128" stroke="white" stroke-width="3" fill="none"/>
+          <!-- Saucer -->
+          <ellipse cx="100" cy="168" rx="62" ry="14" stroke="white" stroke-width="3" fill="rgba(255,255,255,0.08)"/>
+          <!-- Heart -->
+          <path d="M86 118 C86 110 94 104 100 114 C106 104 114 110 114 118 C114 127 100 140 100 140 C100 140 86 127 86 118Z"
+                stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+
+      <div class="rez-form-panel">
+        <h3 class="form-heading">Formularz rezerwacji</h3>
+        <form id="rezForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Imię i nazwisko</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Anna Nowak" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Adres email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="anna@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="date">Data wizyty</label>
+            <input class="form-input" type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pora dnia</label>
+            <div class="time-options">
+              <button type="button" class="time-option" data-value="rano">Rano (8:00–11:00)</button>
+              <button type="button" class="time-option" data-value="poludnie">Południe (11:00–15:00)</button>
+              <button type="button" class="time-option" data-value="popoludnie">Popołudnie (15:00–20:00)</button>
+            </div>
+            <input type="hidden" id="pora" name="pora" />
+          </div>
+          <button type="submit" class="btn-orange" style="width: 100%; margin-top: 0.5rem;">
+            Wyślij rezerwację
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const options = document.querySelectorAll<HTMLButtonElement>('.time-option');
+  const hiddenInput = document.getElementById('pora') as HTMLInputElement;
+
+  options.forEach(btn => {
+    btn.addEventListener('click', () => {
+      options.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      hiddenInput.value = btn.dataset.value ?? '';
+    });
+  });
+
+  document.getElementById('rezForm')?.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Dziękujemy za rezerwację! Odezwiemy się wkrótce.');
+  });
+</script>

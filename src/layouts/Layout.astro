@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  page: string;
+}
+const { title, page } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} — Słodko Kawiarnia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-logo">Słodko</a>
+    <ul class="nav-links">
+      <li><a href="/" class:list={['nav-link', { active: page === 'home' }]}>Strona główna</a></li>
+      <li><a href="/menu" class:list={['nav-link', { active: page === 'menu' }]}>Menu</a></li>
+      <li><a href="/zasady" class:list={['nav-link', { active: page === 'zasady' }]}>Zasady</a></li>
+      <li><a href="/torty" class:list={['nav-link', { active: page === 'torty' }]}>Konfigurator tortów</a></li>
+      <li><a href="/rezerwacja" class:list={['nav-link', { active: page === 'rezerwacja' }]}>Rezerwacja</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">Słodko</div>
+    <p class="footer-copy">© 2026 Słodko Kawiarnia · Wszelkie prawa zastrzeżone</p>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

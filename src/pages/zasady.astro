@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const zasady = [
+  {
+    num: '01',
+    title: 'Atmosfera spokoju',
+    desc: 'Dbamy o ciszę i spokój. Prosimy o ściszenie telefonów i rozmowy w umiarkowanym tonie.',
+  },
+  {
+    num: '02',
+    title: 'Czas przy stoliku',
+    desc: 'W godzinach szczytu prosimy o zajmowanie stolika przez maksymalnie 2 godziny, aby każdy gość mógł skorzystać z kawiarni.',
+  },
+  {
+    num: '03',
+    title: 'Własne jedzenie',
+    desc: 'Nie zezwalamy na spożywanie własnych posiłków. Zapraszamy do skorzystania z naszego menu pełnego domowych wypieków.',
+  },
+  {
+    num: '04',
+    title: 'Płatność',
+    desc: 'Przyjmujemy płatność gotówkową oraz kartą płatniczą. BLIK mile widziany.',
+  },
+];
+---
+<Layout title="Zasady" page="zasady">
+
+  <section class="zasady">
+    <h1 class="zasady-title">Zasady kawiarni</h1>
+    {zasady.map(z => (
+      <div class="zasada-card">
+        <div class="zasada-num">{z.num}</div>
+        <div>
+          <div class="zasada-title">{z.title}</div>
+          <div class="zasada-desc">{z.desc}</div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+</Layout>

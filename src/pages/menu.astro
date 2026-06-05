@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const kawy = [
+  {
+    name: 'Latte',
+    price: '14 zł',
+    gradient: 'linear-gradient(160deg, #d4b08a 0%, #8b5e3c 100%)',
+  },
+  {
+    name: 'Cold Brew',
+    price: '16 zł',
+    gradient: 'linear-gradient(160deg, #7a5240 0%, #2c1a0e 100%)',
+  },
+  {
+    name: 'Matcha Latte',
+    price: '17 zł',
+    gradient: 'linear-gradient(160deg, #c2dab8 0%, #5a8a4a 100%)',
+  },
+  {
+    name: 'Espresso',
+    price: '9 zł',
+    gradient: 'linear-gradient(160deg, #a07850 0%, #3d200e 100%)',
+  },
+];
+
+const slodkosci = [
+  {
+    name: 'Szarlotka',
+    price: '14 zł',
+    gradient: 'linear-gradient(160deg, #e8c890 0%, #c07830 100%)',
+  },
+  {
+    name: 'Croissant',
+    price: '9 zł',
+    gradient: 'linear-gradient(160deg, #f0d8a0 0%, #c89435 100%)',
+  },
+  {
+    name: 'Sernik',
+    price: '16 zł',
+    gradient: 'linear-gradient(160deg, #f5e8d0 0%, #d4a870 100%)',
+  },
+  {
+    name: 'Tarta cytrynowa',
+    price: '15 zł',
+    gradient: 'linear-gradient(160deg, #f2ef9a 0%, #ccc035 100%)',
+  },
+];
+---
+<Layout title="Menu" page="menu">
+
+  <section class="menu-section menu-section--blue">
+    <h2 class="menu-heading">Nasze kawy</h2>
+    <div class="menu-grid">
+      {kawy.map(item => (
+        <div class="menu-card">
+          <div class="menu-card-img" style={`background: ${item.gradient};`}></div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">{item.name}</div>
+            <div class="menu-card-price">{item.price}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="menu-section menu-section--yellow">
+    <h2 class="menu-heading">Słodkości</h2>
+    <div class="menu-grid">
+      {slodkosci.map(item => (
+        <div class="menu-card menu-card--outlined">
+          <div class="menu-card-img" style={`background: ${item.gradient};`}></div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">{item.name}</div>
+            <div class="menu-card-price">{item.price}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</Layout>
