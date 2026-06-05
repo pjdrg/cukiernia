@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Kontakt" page="kontakt">
+
+  <section class="kontakt">
+    <div class="kontakt-inner">
+
+      <div class="kontakt-info">
+        <h2 class="kontakt-title">Znajdź nas</h2>
+
+        <div class="kontakt-row">
+          <svg class="kontakt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <div>
+            <div class="kontakt-label">Adres</div>
+            <div class="kontakt-value">ul. Cukiernicza 12<br />00-001 Warszawa</div>
+          </div>
+        </div>
+
+        <div class="kontakt-row">
+          <svg class="kontakt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.6 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.12 4.18 2 2 0 0 1 5.09 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <div class="kontakt-label">Telefon</div>
+            <a class="kontakt-value kontakt-link" href="tel:+48123456789">+48 123 456 789</a>
+          </div>
+        </div>
+
+        <div class="kontakt-row">
+          <svg class="kontakt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+          <div>
+            <div class="kontakt-label">Email</div>
+            <a class="kontakt-value kontakt-link" href="mailto:hello@slodko.pl">hello@slodko.pl</a>
+          </div>
+        </div>
+
+        <div class="kontakt-row">
+          <svg class="kontakt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12,6 12,12 16,14"/>
+          </svg>
+          <div>
+            <div class="kontakt-label">Godziny otwarcia</div>
+            <div class="kontakt-value">Pon–Pt: 8:00–20:00<br />Sob–Nd: 9:00–21:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kontakt-map-wrap">
+        <iframe
+          class="kontakt-map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=21.002%2C52.228%2C21.030%2C52.244&layer=mapnik&marker=52.2362%2C21.0163"
+          loading="lazy"
+          title="Lokalizacja kawiarni Słodko"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+    </div>
+
+    <div class="kontakt-form-wrap">
+      <div class="kontakt-form-inner">
+        <h3 class="form-heading">Napisz do nas</h3>
+        <form id="kontaktForm">
+          <div class="kontakt-form-grid">
+            <div class="form-group">
+              <label class="form-label" for="k-name">Imię i nazwisko</label>
+              <input class="form-input" type="text" id="k-name" name="name" placeholder="Anna Nowak" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="k-email">Adres email</label>
+              <input class="form-input" type="email" id="k-email" name="email" placeholder="anna@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="k-temat">Temat</label>
+            <input class="form-input" type="text" id="k-temat" name="temat" placeholder="Rezerwacja, pytanie o tort..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="k-wiadomosc">Wiadomość</label>
+            <textarea class="form-input form-textarea" id="k-wiadomosc" name="wiadomosc" placeholder="Napisz do nas..." required></textarea>
+          </div>
+          <button type="submit" class="btn-orange" style="width: 100%;">Wyślij wiadomość</button>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+</Layout>
+
+<script>
+  document.getElementById('kontaktForm')?.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Dziękujemy! Odezwiemy się wkrótce.');
+    (e.target as HTMLFormElement).reset();
+  });
+</script>

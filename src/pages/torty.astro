@@ -16,15 +16,15 @@ import Layout from '../layouts/Layout.astro';
       <h3>Liczba pięter</h3>
       <div class="tier-grid">
         <button class="tier-btn active" data-key="tiers" data-value="1">
-          <svg viewBox="0 0 60 50" fill="none"><rect x="10" y="15" width="40" height="22" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><ellipse cx="30" cy="15" rx="20" ry="5" fill="#5B62D9" opacity=".35"/><ellipse cx="30" cy="37" rx="20" ry="5" fill="#5B62D9" opacity=".25"/></svg>
+          <svg viewBox="0 0 60 50" fill="none"><rect x="10" y="15" width="40" height="22" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><ellipse cx="30" cy="15" rx="20" ry="5" fill="#A3320B" opacity=".35"/><ellipse cx="30" cy="37" rx="20" ry="5" fill="#A3320B" opacity=".25"/></svg>
           <span>1 piętro</span>
         </button>
         <button class="tier-btn" data-key="tiers" data-value="2">
-          <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="32" width="44" height="20" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><rect x="16" y="14" width="28" height="20" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><ellipse cx="30" cy="14" rx="14" ry="4" fill="#5B62D9" opacity=".35"/><ellipse cx="30" cy="52" rx="22" ry="5" fill="#5B62D9" opacity=".25"/></svg>
+          <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="32" width="44" height="20" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><rect x="16" y="14" width="28" height="20" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><ellipse cx="30" cy="14" rx="14" ry="4" fill="#A3320B" opacity=".35"/><ellipse cx="30" cy="52" rx="22" ry="5" fill="#A3320B" opacity=".25"/></svg>
           <span>2 piętra</span>
         </button>
         <button class="tier-btn" data-key="tiers" data-value="3">
-          <svg viewBox="0 0 60 70" fill="none"><rect x="5" y="46" width="50" height="18" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><rect x="13" y="28" width="34" height="18" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><rect x="20" y="12" width="20" height="18" rx="4" fill="#5B62D9" opacity=".2" stroke="#5B62D9" stroke-width="2"/><ellipse cx="30" cy="12" rx="10" ry="3.5" fill="#5B62D9" opacity=".4"/><ellipse cx="30" cy="64" rx="25" ry="5.5" fill="#5B62D9" opacity=".2"/></svg>
+          <svg viewBox="0 0 60 70" fill="none"><rect x="5" y="46" width="50" height="18" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><rect x="13" y="28" width="34" height="18" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><rect x="20" y="12" width="20" height="18" rx="4" fill="#A3320B" opacity=".2" stroke="#A3320B" stroke-width="2"/><ellipse cx="30" cy="12" rx="10" ry="3.5" fill="#A3320B" opacity=".4"/><ellipse cx="30" cy="64" rx="25" ry="5.5" fill="#A3320B" opacity=".2"/></svg>
           <span>3 piętra</span>
         </button>
       </div>
@@ -32,7 +32,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="konfig-block">
       <div class="konfig-num">02</div>
-      <h3>Liczba kawałków</h3>
+      <h3>Liczba porcji</h3>
       <div class="slice-grid">
         {[6, 8, 10, 12, 16, 20].map(n => (
           <button class:list={['slice-btn', { active: n === 8 }]} data-key="slices" data-value={n}>
@@ -141,7 +141,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="summary-price">
         Szacunkowa cena: <strong id="priceDisplay">—</strong>
       </div>
-      <a href="/rezerwacja" class="btn-orange" id="orderBtn">Zamów ten tort</a>
+      <a href="/kontakt" class="btn-orange" id="orderBtn">Zamów ten tort</a>
     </div>
   </div>
 </section>
@@ -159,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--crimson);
 }
 .konfig-hero p {
   margin-top: 0.6rem;
@@ -186,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
 .konfig-block {
   background: white;
   border-radius: 20px;
-  border: 2px solid rgba(91,98,217,0.1);
+  border: 2px solid rgba(107,5,4,0.1);
   padding: 1.6rem 1.8rem;
 }
 .konfig-block h3 {
@@ -222,7 +222,7 @@ import Layout from '../layouts/Layout.astro';
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 0.5rem;
-  border: 2px solid rgba(91,98,217,0.2);
+  border: 2px solid rgba(107,5,4,0.2);
   border-radius: 16px;
   background: var(--yellow);
   cursor: pointer;
@@ -236,7 +236,7 @@ import Layout from '../layouts/Layout.astro';
 .tier-btn:hover { border-color: var(--blue); }
 .tier-btn.active {
   border-color: var(--blue);
-  background: rgba(91,98,217,0.07);
+  background: rgba(107,5,4,0.07);
   color: var(--blue);
 }
 
@@ -249,7 +249,7 @@ import Layout from '../layouts/Layout.astro';
 .slice-btn {
   min-width: 52px;
   padding: 0.6rem 0.8rem;
-  border: 2px solid rgba(91,98,217,0.18);
+  border: 2px solid rgba(107,5,4,0.18);
   border-radius: 12px;
   background: var(--yellow);
   font-family: 'DM Sans', sans-serif;
@@ -277,7 +277,7 @@ import Layout from '../layouts/Layout.astro';
   align-items: center;
   gap: 0.6rem;
   padding: 0.65rem 1rem;
-  border: 2px solid rgba(91,98,217,0.15);
+  border: 2px solid rgba(107,5,4,0.15);
   border-radius: 12px;
   background: var(--yellow);
   font-family: 'DM Sans', sans-serif;
@@ -290,7 +290,7 @@ import Layout from '../layouts/Layout.astro';
 .flavor-btn:hover { border-color: var(--blue); }
 .flavor-btn.active {
   border-color: var(--blue);
-  background: rgba(91,98,217,0.07);
+  background: rgba(107,5,4,0.07);
   font-weight: 700;
   color: var(--blue);
 }
@@ -320,7 +320,7 @@ import Layout from '../layouts/Layout.astro';
   cursor: pointer;
   transition: border-color 0.15s;
 }
-.color-btn:hover { border-color: rgba(91,98,217,0.4); }
+.color-btn:hover { border-color: rgba(107,5,4,0.4); }
 .color-btn.active { border-color: var(--blue); }
 .color-swatch {
   width: 40px;
@@ -347,7 +347,7 @@ import Layout from '../layouts/Layout.astro';
   flex-direction: column;
   align-items: flex-start;
   padding: 0.8rem 1rem;
-  border: 2px solid rgba(91,98,217,0.15);
+  border: 2px solid rgba(107,5,4,0.15);
   border-radius: 12px;
   background: var(--yellow);
   cursor: pointer;
@@ -358,7 +358,7 @@ import Layout from '../layouts/Layout.astro';
 .deko-btn:hover { border-color: var(--orange); }
 .deko-btn.active {
   border-color: var(--orange);
-  background: rgba(201,75,42,0.06);
+  background: rgba(230,175,46,0.06);
 }
 .deko-label {
   font-size: 0.88rem;
@@ -367,7 +367,7 @@ import Layout from '../layouts/Layout.astro';
 }
 .deko-extra {
   font-size: 0.75rem;
-  color: var(--orange);
+  color: var(--crimson);
   font-weight: 600;
   margin-top: 0.2rem;
 }
@@ -412,7 +412,7 @@ import Layout from '../layouts/Layout.astro';
 .summary-card {
   background: white;
   border-radius: 20px;
-  border: 2px solid rgba(91,98,217,0.12);
+  border: 2px solid rgba(107,5,4,0.12);
   padding: 1.5rem;
 }
 .summary-card h3 {
@@ -435,7 +435,7 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(91,98,217,0.08);
+  border-bottom: 1px solid rgba(107,5,4,0.08);
 }
 .summary-list li span { color: var(--blue); font-weight: 600; }
 .summary-price {
@@ -508,7 +508,7 @@ function buildSvg(cfg: Config): string {
 
   let s = '';
 
-  // Positions (bottom to top)
+  // Build tier positions bottom→top
   let yPos = PLATE_Y;
   const tiers: Array<{ w: number; h: number; y: number }> = [];
   for (const t of activeTiers) {
@@ -516,11 +516,15 @@ function buildSvg(cfg: Config): string {
     tiers.push({ ...t, y: yPos });
   }
 
+  const bottom = tiers[0];
+  const top = tiers[tiers.length - 1];
+
   // Plate
   s += `<ellipse cx="${CX}" cy="${PLATE_Y + 10}" rx="158" ry="17" fill="#d8cfc0"/>`;
   s += `<ellipse cx="${CX}" cy="${PLATE_Y + 8}" rx="155" ry="15" fill="#ede5d8"/>`;
 
-  // Tiers
+  // Tiers + slice lines drawn on top ellipse of each tier
+  const sliceAngle = (2 * Math.PI) / cfg.slices;
   for (let i = 0; i < tiers.length; i++) {
     const { w, h, y } = tiers[i];
     const rx = w / 2;
@@ -532,10 +536,16 @@ function buildSvg(cfg: Config): string {
     s += `<rect x="${x + w - 7}" y="${y}" width="7" height="${h}" fill="${color.shadow}" opacity="0.35"/>`;
     s += `<rect x="${x}" y="${y + h - 8}" width="${w}" height="8" fill="${color.top}" opacity="0.55"/>`;
     s += `<ellipse cx="${CX}" cy="${y}" rx="${rx}" ry="${ERY}" fill="${color.top}"/>`;
+    // All slice lines on top ellipse — proper ellipse projection, no cap
+    for (let sl = 0; sl < cfg.slices; sl++) {
+      const angle = sl * sliceAngle - Math.PI / 2;
+      const ex = CX + Math.cos(angle) * rx;
+      const ey = y + Math.sin(angle) * ERY;
+      s += `<line x1="${CX}" y1="${y}" x2="${ex}" y2="${ey}" stroke="${color.stroke}" stroke-width="1" opacity="0.35"/>`;
+    }
   }
 
   // Frosting drips on top tier
-  const top = tiers[tiers.length - 1];
   const drips = Math.floor((top.w - 40) / 32);
   for (let d = 0; d < drips; d++) {
     const dx = CX - top.w / 2 + 20 + d * ((top.w - 40) / Math.max(drips - 1, 1));
@@ -543,42 +553,7 @@ function buildSvg(cfg: Config): string {
     s += `<rect x="${dx - 4}" y="${top.y - ERY + 5}" width="8" height="${dl}" rx="4" fill="${color.top}"/>`;
   }
 
-  // Slice lines indicator on bottom tier (subtle)
-  const bottom = tiers[0];
-  const sliceAngle = (2 * Math.PI) / cfg.slices;
-  for (let i = 0; i < Math.min(cfg.slices, 12); i++) {
-    const angle = i * sliceAngle - Math.PI / 2;
-    const ex = CX + Math.cos(angle) * (bottom.w / 2 - 4);
-    const ey = bottom.y + bottom.h / 2 + Math.sin(angle) * (bottom.h / 3);
-    s += `<line x1="${CX}" y1="${bottom.y + bottom.h / 2}" x2="${ex}" y2="${ey}" stroke="${color.shadow}" stroke-width="1.2" opacity="0.45"/>`;
-  }
-
-  // Decorations
-  if (cfg.deko.includes('owoce')) {
-    [CX - 24, CX, CX + 24].forEach(fx => {
-      const fy = top.y - ERY - 10;
-      s += `<ellipse cx="${fx}" cy="${fy + 4}" rx="8" ry="10" fill="#d42020"/>`;
-      s += `<ellipse cx="${fx - 2}" cy="${fy - 3}" rx="3" ry="4" fill="#cc1818"/>`;
-      s += `<line x1="${fx}" y1="${fy - 8}" x2="${fx}" y2="${fy - 16}" stroke="#2a8a2a" stroke-width="2" stroke-linecap="round"/>`;
-      s += `<ellipse cx="${fx + 5}" cy="${fy - 13}" rx="5" ry="3" fill="#2a8a2a" transform="rotate(-30 ${fx + 5} ${fy - 13})"/>`;
-    });
-  }
-
-  if (cfg.deko.includes('kwiaty')) {
-    const flowers = [
-      { x: CX - 26, y: top.y - ERY - 14, c: '#f9b0d0' },
-      { x: CX + 4, y: top.y - ERY - 18, c: '#f9d070' },
-      { x: CX + 26, y: top.y - ERY - 13, c: '#c0a0f0' },
-    ];
-    flowers.forEach(({ x, y, c }) => {
-      for (let p = 0; p < 5; p++) {
-        const a = (p / 5) * Math.PI * 2 - Math.PI / 2;
-        s += `<ellipse cx="${x + Math.cos(a) * 7}" cy="${y + Math.sin(a) * 7}" rx="5.5" ry="5.5" fill="${c}"/>`;
-      }
-      s += `<circle cx="${x}" cy="${y}" r="4.5" fill="#f8e040"/>`;
-    });
-  }
-
+  // Posypki — scattered on tier bodies (side faces)
   if (cfg.deko.includes('posypki')) {
     const cols = ['#e03030', '#3060e0', '#30a030', '#e0a030', '#9030c0', '#20c0c0'];
     let seed = 1337;
@@ -594,29 +569,66 @@ function buildSvg(cfg: Config): string {
     });
   }
 
+  // Owoce — on FRONT FACE of bottom tier (body area, below mid-height)
+  // Placed within the tier body, never conflicts with candles above the tier
+  if (cfg.deko.includes('owoce')) {
+    const bw = bottom.w;
+    const fy = bottom.y + bottom.h * 0.58;
+    [CX - bw * 0.3, CX - bw * 0.1, CX + bw * 0.1, CX + bw * 0.3].forEach(fx => {
+      s += `<ellipse cx="${fx}" cy="${fy + 6}" rx="7" ry="9" fill="#d42020"/>`;
+      s += `<ellipse cx="${fx - 2}" cy="${fy}" rx="3" ry="3.5" fill="#bb1010"/>`;
+      s += `<line x1="${fx}" y1="${fy - 4}" x2="${fx}" y2="${fy - 12}" stroke="#2a8a2a" stroke-width="2" stroke-linecap="round"/>`;
+      s += `<ellipse cx="${fx + 4}" cy="${fy - 10}" rx="4" ry="2.5" fill="#2a8a2a" transform="rotate(-30 ${fx + 4} ${fy - 10})"/>`;
+    });
+  }
+
+  // Kwiaty — on FRONT FACE of bottom tier (upper portion of body)
+  // Placed within the tier body, never conflicts with candles above the tier
+  if (cfg.deko.includes('kwiaty')) {
+    const bw = bottom.w;
+    const ky = bottom.y + bottom.h * 0.28;
+    [
+      { x: CX - bw * 0.33, y: ky,     c: '#f9b0d0' },
+      { x: CX,              y: ky - 5, c: '#f9d070' },
+      { x: CX + bw * 0.33, y: ky,     c: '#c0a0f0' },
+    ].forEach(({ x, y, c }) => {
+      for (let p = 0; p < 5; p++) {
+        const a = (p / 5) * Math.PI * 2 - Math.PI / 2;
+        s += `<ellipse cx="${x + Math.cos(a) * 6}" cy="${y + Math.sin(a) * 6}" rx="5" ry="5" fill="${c}"/>`;
+      }
+      s += `<circle cx="${x}" cy="${y}" r="4" fill="#f8e040"/>`;
+    });
+  }
+
+  // Napis — on bottom tier front face; dynamic font-size + textLength to fit all 20 chars
+  if (cfg.napis) {
+    const availW = bottom.w - 24;
+    const estimatedW = cfg.napis.length * 8;
+    const tl = Math.min(availW, estimatedW);
+    const ty = bottom.y + bottom.h / 2 + 5;
+    s += `<text x="${CX}" y="${ty}" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic" fill="${color.stroke}" textLength="${tl}" lengthAdjust="spacingAndGlyphs">${cfg.napis}</text>`;
+  }
+
+  // Figurka — on top tier, shifted LEFT of center so candles (center-right) don't overlap
   if (cfg.deko.includes('figurka')) {
-    const fx = CX;
-    const fy = top.y - ERY - 24;
+    const offset = top.w * 0.3;
+    const fx = CX - offset;
+    const fy = top.y - ERY - 18;
     const pts: string[] = [];
     for (let p = 0; p < 10; p++) {
       const a = (p / 10) * Math.PI * 2 - Math.PI / 2;
-      const r = p % 2 === 0 ? 17 : 7;
+      const r = p % 2 === 0 ? 14 : 6;
       pts.push(`${fx + Math.cos(a) * r},${fy + Math.sin(a) * r}`);
     }
     s += `<polygon points="${pts.join(' ')}" fill="#f0c020" stroke="#d0a010" stroke-width="1.5"/>`;
   }
 
-  // Inscription
-  if (cfg.napis && !cfg.deko.includes('figurka')) {
-    const txt = cfg.napis.length > 13 ? cfg.napis.slice(0, 13) + '..' : cfg.napis;
-    const ty = tiers.length > 1 ? tiers[tiers.length - 1].y + tiers[tiers.length - 1].h / 2 + 6 : top.y + top.h / 2 + 6;
-    s += `<text x="${CX}" y="${ty}" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="${color.stroke}" letter-spacing="0.3">${txt}</text>`;
-  }
-
-  // Candles
+  // Candles — on top tier, CENTER-RIGHT area, drawn LAST (always on top of everything)
   const candleCount = cfg.tiers;
   const spacing = 28;
-  const cx0 = CX - ((candleCount - 1) * spacing) / 2;
+  const hasFiguarka = cfg.deko.includes('figurka');
+  const candleBase = hasFiguarka ? CX + top.w * 0.1 : CX;
+  const cx0 = candleBase - ((candleCount - 1) * spacing) / 2;
   const candleColors = ['#f0d060', '#f08060', '#80c0f0', '#d0a0f0'];
   for (let c = 0; c < candleCount; c++) {
     const cx = cx0 + c * spacing;
@@ -658,7 +670,7 @@ function refresh() {
   const dekoNames = config.deko.map(d => ({ owoce: 'Owoce', kwiaty: 'Kwiaty', posypki: 'Posypki', figurka: 'Figurka' }[d] ?? d));
   const rows: Array<[string, string]> = [
     ['Piętra', `${config.tiers}`],
-    ['Kawałki', `${config.slices}`],
+    ['Porcje', `${config.slices}`],
     ['Biszkopt', LABELS.biszkopt[config.biszkopt] ?? config.biszkopt],
     ['Krem', LABELS.krem[config.krem] ?? config.krem],
     ['Polewa', LABELS.polewa[config.polewa] ?? config.polewa],
@@ -674,7 +686,7 @@ function refresh() {
   const btn = document.getElementById('orderBtn') as HTMLAnchorElement | null;
   if (btn) {
     const params = new URLSearchParams({ tort: JSON.stringify(config) });
-    btn.href = `/rezerwacja?${params}`;
+    btn.href = `/kontakt?${params}`;
   }
 }
 
