@@ -24,6 +24,7 @@ html {
 
 body {
   background: var(--yellow);
+  overflow-x: hidden;
 }
 
 /* NAV */
@@ -184,7 +185,7 @@ body {
 
 .hero-title {
   font-family: 'Abril Fatface', serif;
-  font-size: clamp(5rem, 15vw, 11rem);
+  font-size: clamp(2rem, 11vw, 11rem);
   color: var(--crimson);
   line-height: 1;
   letter-spacing: -0.02em;
